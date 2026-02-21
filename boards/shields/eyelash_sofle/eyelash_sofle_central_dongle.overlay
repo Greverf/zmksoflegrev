@@ -10,7 +10,6 @@
 /{
     chosen {
         zmk,kscan = &mock_kscan;
-        zmk,display = &oled;
     };
     mock_kscan: kscan_1 {
         compatible = "zmk,kscan-mock";
@@ -39,7 +38,7 @@
 
 &i2c0 {
     status = "okay";
-    compatible = "nordic,nrf-twi";
+    compatible = "nordic,nrf-twim";
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
 
