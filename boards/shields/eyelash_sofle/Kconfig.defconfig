@@ -1,13 +1,19 @@
-
-if SHIELD_SOFLE_CENTRAL_DONGLE || SHIELD_CYGNUS_CENTRAL_LEFT
+if SHIELD_EYELASH_SOFLE_CENTRAL_DONGLE
 
 config ZMK_KEYBOARD_NAME
-    default "Sofle"
+    default "E_Solfe-Dongle"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 endif
+
+
+if SHIELD_EYELASH_SOFLE_CENTRAL_DONGLE || SHIELD_EYELASH_SOFLE_PERIPHERAL_LEFT || SHIELD_EYELASH_SOFLE_PERIPHERAL_RIGHT
+
+config ZMK_SPLIT
+    default y
+
 
 if ZMK_DISPLAY
 
@@ -23,7 +29,7 @@ endchoice
 
 endif
 
-if LVGL
+if SSD1306
 
 config LV_Z_VDB_SIZE
     default 64
@@ -40,9 +46,14 @@ endchoice
 
 endif
 
-if SHIELD_SOFLE_CENTRAL_DONGLE || SHIELD_SOFLE_CENTRAL_LEFT || SHIELD_SOFLE_PERIPHERAL_LEFT || SHIELD_SOFLE_PERIPHERAL_RIGHT
+if ZMK_BACKLIGHT
 
-config ZMK_SPLIT
+config PWM
     default y
+
+config LED_PWM
+    default y
+
+endif # ZMK_BACKLIGHT
 
 endif
