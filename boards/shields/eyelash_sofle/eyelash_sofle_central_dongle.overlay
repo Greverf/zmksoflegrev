@@ -37,7 +37,14 @@
     };	
 }; 
 
-oled: ssd1306@3c {
+&i2c0 {
+    status = "okay";
+    compatible = "nordic,nrf-twim";
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    oled: ssd1306@3c {
     compatible = "solomon,ssd1306fb";
     reg = <0x3c>;
     width = <128>;
@@ -48,4 +55,7 @@ oled: ssd1306@3c {
     multiplex-ratio = <63>;
     segment-remap;
     com-invdir;
+    };
 };
+
+
