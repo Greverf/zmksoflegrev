@@ -61,7 +61,5 @@
     com-invdir;
 
     prechargep = <0xF1>;
-    display-clock-div = <0x80>;
-    contrast = <0x8F>;
 };
 };
